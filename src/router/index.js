@@ -1,20 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import vuefourView from '@/views/vuefourView.vue'
-import vuethreeView from '@/views/vuethreeView.vue'
-import teleportView from '@/views/teleportView'
-import mymodalView from '@/views/mymodalView.vue'
-import SuspenseView from '@/views/SuspenseView.vue'
-import computedView from '@/views/computedView.vue'
-import reactiverefView from '@/views/reactiveRefView.vue'
-import SctiptSetupView from '@/views/SctiptSetupView.vue'
-import ComposablesView from '@/views/ComposablesView.vue'
-import PiniaView from '@/views/PiniaView.vue'
-import FragmentView from '@/views/FragmentView.vue'
-import ParentView from '@/views/ParentView.vue'
-import MyMixinView from '@/views/MyMixinView.vue'
-import VParentView from '@/views/vmodel/VParentView.vue'
-import TwoParentView from '@/views/vmodel/TwoParentView.vue'
 
 const routes = [
   {
@@ -23,87 +8,185 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/TwoParentView',
-    name: 'TwoParentView',
-    component: TwoParentView
-  },
-  {
-    path: '/VParentView',
-    name: 'VParentView',
-    component: VParentView
-  },
-  {
-    path: '/mymixin',
-    name: 'MyMixinView',
-    component: MyMixinView
-  },
-  {
-    path: '/parent',
-    name: 'ParentView',
-    component: ParentView
-  },
-  {
-    path: '/fragment',
-    name: 'FragmentView',
-    component: FragmentView
-  },
-  {
-    path: '/piniavu',
-    name: 'PiniaView',
-    component: PiniaView
-  },
-  {
-    path: '/composable',
-    name: 'Composable',
-    component: ComposablesView
-  },
-  {
-    path: '/scriptsetup',
-    name: 'ScriptSetUp',
-    component: SctiptSetupView
-  },
-  {
-    path: '/rr',
-    name: 'ReactiveRef',
-    component: reactiverefView
-  },
-  {
-    path: '/comp',
-    name: 'ComputedView',
-    component: computedView
-  },
-  {
-    path: '/suspense',
-    name: 'SuspanseView',
-    component: SuspenseView
-  },
-  {
-    path: '/modal',
-    name: 'ModalView',
-    component: mymodalView
-  },
-  {
-    path: '/tele',
-    name: 'Teleport',
-    component: teleportView
-  },
-  {
-    path: '/vue4',
-    name: 'Vue4',
-    component: vuefourView
-  },
-  {
-    path: '/vue3',
-    name: 'Vue3',
-    component: vuethreeView
-  },
-  {
     path: '/about',
     name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "main" */ '../views/AboutView.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'DashboardVue',
+    component: () => import(/* webpackChunkName: "main" */'../views/DashboardVue.vue')
+  },
+  {
+    path: '/parentinjectView',
+    name: 'parentinjectView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/provideinject/bfparentinjectView.vue')
+  },
+  {
+    path: '/asynccompo',
+    name: 'asynccompo',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/AsyncComponents/asynccompoView.vue')
+  },
+  {
+    path: '/suspenseView',
+    name: 'suspenseView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/AsyncComponents/bfasyncView.vue')
+  },
+  {
+    path: '/compositeView',
+    name: 'compositeView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/bfCompositionAPIView.vue')
+  },
+  {
+    path: '/DynamicView',
+    name: 'DynamicView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/bfDynamicView.vue')
+  },
+  {
+    path: '/ExtendsView',
+    name: 'ExtendsView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/extendsfunction/bfExtendsView.vue')
+  },
+  {
+    path: '/BaseView',
+    name: 'BaseView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/extendsfunction/bfBaseView.vue')
+  },
+  {
+    path: '/LocalStorage',
+    name: 'LocalStorage',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/bfLocalStorageView.vue')
+  },
+  {
+    path: '/MixinView',
+    name: 'MixinView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/mixinsandcomposables/bfMixinView.vue')
+  },
+  {
+    path: '/PreView',
+    name: 'PreView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/bfPreView.vue')
+  },
+  {
+    path: '/FeatureView',
+    name: 'FeatureView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/fragmentFeature/bfFragFeatureView.vue')
+  },
+  {
+    path: '/Mixin1',
+    name: 'Mixin1',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/mixinsandcomposables/bfMixin1View.vue')
+  },
+  {
+    path: '/tParentView',
+    name: 'tParentView',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/tParentView.vue')
+  },
+  {
+    path: '/cParentView',
+    name: 'cParentView',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/cParentView.vue')
+  },
+  {
+    path: '/P2View',
+    name: 'P2View',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/P2/P2View.vue')
+  },
+  {
+    path: '/ErrBoundary',
+    name: 'ErrBoundary',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/ErrBoundaries/MainCompoFunctionView.vue')
+  },
+  {
+    path: '/cKeyEvents',
+    name: 'cKeyEvents',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/KeyEventsView.vue')
+  },
+  {
+    path: '/WatchEvent',
+    name: 'WatchEvent',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/WatchView.vue')
+  },
+  {
+    path: '/DView',
+    name: 'DView',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/MyDirectiveView.vue')
+  },
+  {
+    path: '/Axi',
+    name: 'Axi',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/AxiosView.vue')
+  },
+  {
+    path: '/asyncawait',
+    name: 'asyncawait',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/AsyncAwaitView.vue')
+  },
+  {
+    path: '/anotherwatchview',
+    name: 'anotherwatchview',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/AnotherWatchView.vue')
+  },
+  {
+    path: '/compA',
+    name: 'compA',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/VuexCalc/ComponentA.vue')
+  },
+  {
+    path: '/CompB',
+    name: 'CompB',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/VuexCalc/ComponentB.vue')
+  },
+  {
+    path: '/SlotView',
+    name: 'SlotView',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/SlotView.vue')
+  },
+  {
+    path: '/Compos',
+    name: 'Compos',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/CoposableView.vue')
+  },
+  {
+    path: '/computedvu',
+    name: 'computedvu',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/computedView.vue')
+  },
+  {
+    path: '/frag',
+    name: 'frag',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/FragmentView.vue')
+  },
+  {
+    path: '/modal',
+    name: 'modal',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/mymodalView.vue')
+  },
+  {
+    path: '/pinia',
+    name: 'pinia',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/PiniaView.vue')
+  },
+  {
+    path: '/MyMixinView',
+    name: 'MyMixinView',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/MyMixinView.vue')
+  },
+  {
+    path: '/reactiveRefView',
+    name: 'reactiveRefView',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/reactiveRefView.vue'),
+    beforeEnter: (to, from, next) => {
+      const isAuthorized = true
+      if (isAuthorized) {
+        next()
+      } else {
+        next('/dashboard')
+      }
+    }
   }
 ]
 
@@ -111,5 +194,24 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  // to: the target Route Object being navigated to.
+  // from: the current route, about to leave.
+  // next: a function that resolves the hook.
+  if (to.meta.requiresAuth) {
+    // Check if the route requires authentication */
+    const isAuthenticated = localStorage.getItem('token')
+    if (isAuthenticated) {
+      next() // Proceed to the route
+      console.log(isAuthenticated)
+      console.log('1')
+    } else {
+      next('/') // Redirect to login page
+      console.log('2')
+    }
+  } else {
+    next() // Proceed to the route
+    console.log('3')
+  }
+})
 export default router

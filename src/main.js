@@ -1,16 +1,36 @@
-// main.js
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
 import { createPinia } from 'pinia'
-import VueFrag from 'vue-frag'
-import { vFocus } from './directives/directives'
+import store from './store'
+// import VueMask from 'v-mask'
+import { createI18n } from 'vue-i18n'
+
+import en from './locales/en.json'
+import fr from './locales/fr.json'
+
+const i18n = createI18n({
+  locale: 'en', // default language
+  fallbackLocale: 'en', // fallback if no translation found
+  messages: {
+    en,
+    fr
+  }
+})
+/* const i18nf = createI18n({
+  locale: 'fr', // default language
+  fallbackLocale: 'fr', // fallback if no translation found
+  messages: {
+    en,
+    fr
+  }
+}) */
+
 const pinia = createPinia()
 const app = createApp(App)
 app.use(store)
 app.use(pinia)
 app.use(router)
-app.use(VueFrag)
-app.directive('focus', vFocus)
+app.use(i18n)
+// app.use(VueMask)
 app.mount('#app')
