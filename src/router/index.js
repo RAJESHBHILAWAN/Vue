@@ -131,14 +131,29 @@ const routes = [
     component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/AnotherWatchView.vue')
   },
   {
-    path: '/compA',
-    name: 'compA',
+    path: '/VuexExample',
+    name: 'VuexExample',
     component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/VuexCalc/ComponentA.vue')
   },
   {
-    path: '/CompB',
-    name: 'CompB',
+    path: '/VuexExampleB',
+    name: 'VuexExampleB',
     component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/VuexCalc/ComponentB.vue')
+  },
+  {
+    path: '/SyncParentComponent',
+    name: 'SyncParentComponent',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/SyncFunctionality/SyncParentComponent.vue')
+  },
+  {
+    path: '/Sync1View',
+    name: 'Sync1View',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/SyncFunctionality/Sync1View.vue')
+  },
+  {
+    path: '/Watch2View',
+    name: 'Watch2View',
+    component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/Watch2View.vue')
   },
   {
     path: '/SlotView',
@@ -176,6 +191,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/MyMixinView.vue')
   },
   {
+    path: '/mydirectiveView',
+    name: 'mydirectiveView',
+    component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/mydirectiveView.vue')
+  },
+  {
     path: '/reactiveRefView',
     name: 'reactiveRefView',
     component: () => import(/* webpackChunkName: "v3" */'../views/v3v4/reactiveRefView.vue'),
@@ -187,7 +207,43 @@ const routes = [
         next('/dashboard')
       }
     }
+  },
+  {
+    path: '/HTTPRequestsView',
+    name: 'HTTPRequestsView',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/HTTPRequestsView.vue')
+  },
+  {
+    path: '/messageSubjectView',
+    name: 'messageSubjectView',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/messageSubjectView.vue')
+  },
+  {
+    path: '/compositionView',
+    name: 'compositionView',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/compositionView.vue')
+  },
+  {
+    path: '/carpartsApi',
+    name: 'carpartsApi',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/carpartsApi.vue')
+  },
+  {
+    path: '/AxiosWithSwitchMap',
+    name: 'AxiosWithSwitchMap',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/AxiosWithSwitchMap.vue')
+  },
+  {
+    path: '/FuncComp',
+    name: 'FuncComp',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/FunctionalComponent/MyFuncComponent.vue')
+  },
+  {
+    path: '/debounce',
+    name: 'debounce',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/debounceView.vue')
   }
+
 ]
 
 const router = createRouter({

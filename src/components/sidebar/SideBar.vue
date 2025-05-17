@@ -1,63 +1,52 @@
 <script>
 import SideBarLink from './SideBarLink'
 import { collapsed, toggleSidebar, sideBarWidth } from './state'
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 export default {
   props: {},
   components: { SideBarLink },
   setup () {
-    const togglebf = ref(true)
-    const togglemain = ref(true)
-    const toggletest = ref(true)
-    const togglepc = ref(true)
-    const togglev3v4 = ref(true)
+    const togglebf = ref(false)
+    const togglemain = ref(false)
+    const toggletest = ref(false)
+    const togglepc = ref(false)
+    const togglev3v4 = ref(false)
+    const toggleadv = ref(false)
 
     const bftoggle = () => {
+      inivalues()
       togglebf.value = !togglebf.value
-      togglemain.value = false
-      toggletest.value = false
-      togglepc.value = false
-      togglev3v4.value = false
     }
     const maintoggle = () => {
+      inivalues()
       togglemain.value = !togglemain.value
-      togglebf.value = false
-      toggletest.value = false
-      togglepc.value = false
-      togglev3v4.value = false
     }
     const testtoggle = () => {
-      togglemain.value = false
-      togglebf.value = false
+      inivalues()
       toggletest.value = !toggletest.value
-      togglepc.value = false
-      togglev3v4.value = false
     }
     const pctoggle = () => {
-      togglemain.value = false
-      togglebf.value = false
-      toggletest.value = false
+      inivalues()
       togglepc.value = !togglepc.value
-      togglev3v4.value = false
     }
     const v3v4toggle = () => {
-      togglemain.value = false
-      togglebf.value = false
-      toggletest.value = false
-      togglepc.value = false
+      inivalues()
       togglev3v4.value = !togglev3v4.value
     }
-    onMounted(
-      () => {
-        togglemain.value = true
-        togglebf.value = false
-        toggletest.value = false
-        togglepc.value = false
-        togglev3v4.value = false
-      }
-    )
-
+    const advtoggle = () => {
+      inivalues()
+      toggleadv.value = !toggleadv.value
+    }
+    const inivalues = () => {
+      togglebf.value = false
+      togglemain.value = false
+      toggletest.value = false
+      togglepc.value = false
+      togglev3v4.value = false
+      toggleadv.value = false
+    }
     return {
+      inivalues,
       collapsed,
       toggleSidebar,
       sideBarWidth,
@@ -70,7 +59,9 @@ export default {
       togglepc,
       pctoggle,
       v3v4toggle,
-      togglev3v4
+      togglev3v4,
+      advtoggle,
+      toggleadv
     }
   }
 }
@@ -94,17 +85,17 @@ export default {
     </div>
     <h4 @click="bftoggle">Basic Functions</h4>
     <div v-show="togglebf" style="overflow-x: auto;">
-      <SideBarLink to="/parentinjectView" icon="fas fa-columns">Inject Parent</SideBarLink>
+      <SideBarLink to="/parentinjectView" icon="fas fa-columns">Inject</SideBarLink>
       <SideBarLink to="/suspenseView" icon="fas fa-columns">SusAsync</SideBarLink>
       <SideBarLink to="/asynccompo" icon="fas fa-columns">AsyncCompo</SideBarLink>
-      <SideBarLink to="/compositeView" icon="fas fa-columns">Composite API</SideBarLink>
+      <SideBarLink to="/compositeView" icon="fas fa-columns">Composite</SideBarLink>
       <SideBarLink to="/DynamicView" icon="fas fa-columns">DynamicView</SideBarLink>
       <SideBarLink to="/ExtendsView" icon="fas fa-columns">ExtendsView</SideBarLink>
       <SideBarLink to="/BaseView" icon="fas fa-columns">BaseView</SideBarLink>
       <SideBarLink to="/LocalStorage" icon="fas fa-columns">LocalStorage</SideBarLink>
       <SideBarLink to="/MixinView" icon="fas fa-columns">MixinView</SideBarLink>
       <SideBarLink to="/PreView" icon="fas fa-columns">PreView</SideBarLink>
-      <SideBarLink to="/FeatureView" icon="fas fa-columns">FeatureView</SideBarLink>
+      <SideBarLink to="/FeatureView" icon="fas fa-columns">Frag</SideBarLink>
       <SideBarLink to="/Mixin1" icon="fas fa-columns">Mixin1</SideBarLink>
 
     </div>
@@ -113,19 +104,22 @@ export default {
       <SideBarLink to="/tParentView" icon="fas fa-columns">TParent</SideBarLink>
       <SideBarLink to="/cParentView" icon="fas fa-columns">CParent</SideBarLink>
       <SideBarLink to="/P2View" icon="fas fa-columns">P2View</SideBarLink>
-      <SideBarLink to="/ErrBoundary" icon="fas fa-columns">ErrBoundary</SideBarLink>
+      <SideBarLink to="/ErrBoundary" icon="fas fa-columns">ErrBound</SideBarLink>
 
     </div>
     <h4 @click="pctoggle">ParentChild</h4>
     <div v-show="togglepc" style="overflow-x: auto;">
       <SideBarLink to="/cKeyEvents" icon="fas fa-columns">KeyEvents</SideBarLink>
       <SideBarLink to="/WatchEvent" icon="fas fa-columns">WatchEvent</SideBarLink>
+      <SideBarLink to="/Watch2View" icon="fas fa-columns">Watch2View</SideBarLink>
       <SideBarLink to="/DView" icon="fas fa-columns">Directive</SideBarLink>
       <SideBarLink to="/Axi" icon="fas fa-columns">Axios</SideBarLink>
       <SideBarLink to="/anotherwatchview" icon="fas fa-columns">Watch</SideBarLink>
-      <SideBarLink to="/compA" icon="fas fa-columns">ComponentA</SideBarLink>
-      <SideBarLink to="/compB" icon="fas fa-columns">ComponentB</SideBarLink>
+      <SideBarLink to="/VuexExample" icon="fas fa-columns">VuexEx</SideBarLink>
+      <SideBarLink to="/VuexExampleB" icon="fas fa-columns">VuexExB</SideBarLink>
       <SideBarLink to="/asyncawait" icon="fas fa-columns">AsyncAwait</SideBarLink>
+      <SideBarLink to="/SyncParentComponent" icon="fas fa-columns">SyncPComp</SideBarLink>
+      <SideBarLink to="/Sync1View" icon="fas fa-columns">Sync1View</SideBarLink>
 
     </div>
     <h4 @click="v3v4toggle">V3V4</h4>
@@ -133,12 +127,23 @@ export default {
       <SideBarLink to="/SlotView" icon="fas fa-columns">SlotView</SideBarLink>
       <SideBarLink to="/Compos" icon="fas fa-columns">Composables</SideBarLink>
       <SideBarLink to="/computedvu" icon="fas fa-columns">Computed</SideBarLink>
-      <SideBarLink to="/frag" icon="fas fa-columns">Fragmented</SideBarLink>
+      <SideBarLink to="/frag" icon="fas fa-columns">Frag.</SideBarLink>
       <SideBarLink to="/modal" icon="fas fa-columns">Modal View</SideBarLink>
       <SideBarLink to="/pinia" icon="fas fa-columns">Pinia</SideBarLink>
       <SideBarLink to="/reactiveRefView" icon="fas fa-columns">Ref View</SideBarLink>
-      <SideBarLink to="/MyMixinView" icon="fas fa-columns">MyMixinView</SideBarLink>
+      <SideBarLink to="/MyMixinView" icon="fas fa-columns">MixinView</SideBarLink>
+      <SideBarLink to="/mydirectiveView" icon="fas fa-columns">Directive</SideBarLink>
 
+    </div>
+    <h4 @click="advtoggle">Advanced</h4>
+    <div v-show="toggleadv" style="overflow-x: auto;">
+      <SideBarLink to="/HTTPRequestsView" icon="fas fa-columns">HTTPReqView</SideBarLink>
+      <SideBarLink to="/messageSubjectView" icon="fas fa-columns">msgSubView</SideBarLink>
+      <SideBarLink to="/compositionView" icon="fas fa-columns">compo</SideBarLink>
+      <SideBarLink to="/carpartsApi" icon="fas fa-columns">carparts</SideBarLink>
+      <SideBarLink to="/AxiosWithSwitchMap" icon="fas fa-columns">AxiosSwitch</SideBarLink>
+      <SideBarLink to="/FuncComp" icon="fas fa-columns">FuncComp</SideBarLink>
+      <SideBarLink to="/debounce" icon="fas fa-columns">Debounce</SideBarLink>
     </div>
     <!---------------------------------------->
 

@@ -32,5 +32,13 @@ app.use(store)
 app.use(pinia)
 app.use(router)
 app.use(i18n)
+app.directive('color', {
+  mounted (el, binding) {
+    el.style.color = binding.value
+  },
+  updated (el, binding) {
+    el.style.color = binding.value
+  }
+})
 // app.use(VueMask)
 app.mount('#app')
