@@ -97,7 +97,7 @@ export default {
       <SideBarLink to="/PreView" icon="fas fa-columns">PreView</SideBarLink>
       <SideBarLink to="/FeatureView" icon="fas fa-columns">Frag</SideBarLink>
       <SideBarLink to="/Mixin1" icon="fas fa-columns">Mixin1</SideBarLink>
-
+      <SideBarLink to="/ErrHandle" icon="fas fa-columns">ErrHandle</SideBarLink>
     </div>
     <h4 @click="testtoggle">Test</h4>
     <div v-show="toggletest" style="overflow-x: auto;">
@@ -120,7 +120,6 @@ export default {
       <SideBarLink to="/asyncawait" icon="fas fa-columns">AsyncAwait</SideBarLink>
       <SideBarLink to="/SyncParentComponent" icon="fas fa-columns">SyncPComp</SideBarLink>
       <SideBarLink to="/Sync1View" icon="fas fa-columns">Sync1View</SideBarLink>
-
     </div>
     <h4 @click="v3v4toggle">V3V4</h4>
     <div v-show="togglev3v4" style="overflow-x: auto;">

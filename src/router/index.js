@@ -76,9 +76,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/fragmentFeature/bfFragFeatureView.vue')
   },
   {
+    path: '/err1',
+    name: 'err1',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/ErrorHandling/ErrHandle1View.vue')
+  },
+  {
     path: '/Mixin1',
     name: 'Mixin1',
     component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/mixinsandcomposables/bfMixin1View.vue')
+  },
+  {
+    path: '/ErrHandle',
+    name: 'ErrHandle',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/ErrorHandling/ErrorHandlerView.vue')
   },
   {
     path: '/tParentView',
