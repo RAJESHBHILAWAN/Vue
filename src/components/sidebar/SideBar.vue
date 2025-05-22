@@ -98,6 +98,7 @@ export default {
       <SideBarLink to="/FeatureView" icon="fas fa-columns">Frag</SideBarLink>
       <SideBarLink to="/Mixin1" icon="fas fa-columns">Mixin1</SideBarLink>
       <SideBarLink to="/ErrHandle" icon="fas fa-columns">ErrHandle</SideBarLink>
+      <SideBarLink to="/loopView" icon="fas fa-columns">Loop</SideBarLink>
     </div>
     <h4 @click="testtoggle">Test</h4>
     <div v-show="toggletest" style="overflow-x: auto;">

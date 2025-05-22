@@ -1,5 +1,7 @@
 <template>
   <div>
+      <router-link to="/ErrHandle">....</router-link>
+
     <button @click="triggerError">Trigger Error in Child</button>
     <ChildComponent v-if="!error" />
     <p v-else class="error-message">An error occurred: {{ error.message }}</p>

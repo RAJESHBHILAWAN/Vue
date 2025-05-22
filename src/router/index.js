@@ -91,6 +91,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/ErrorHandling/ErrorHandlerView.vue')
   },
   {
+    path: '/loopView',
+    name: 'loopView',
+    component: () => import(/* webpackChunkName: "basicfunctions" */'../views/basicfunctions/loopView.vue')
+  },
+  {
     path: '/tParentView',
     name: 'tParentView',
     component: () => import(/* webpackChunkName: "test" */'../views/test/tParentView.vue')

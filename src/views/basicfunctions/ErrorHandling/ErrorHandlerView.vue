@@ -1,8 +1,9 @@
+//MainComponent
 <template>
-     <router-link to="/err1">Err1</router-link>
 
    <div>
       <button @click="doRiskyThing">Do A risky Thing</button>
+  <router-link to="/err1">Err1</router-link>
 
     <p v-if="error" class="error-message">An error occurred: {{ error }}</p>
   </div>
