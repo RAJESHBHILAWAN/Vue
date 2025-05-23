@@ -13,12 +13,47 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "main" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "main" */ '../views/main/AboutView.vue')
   },
   {
     path: '/dashboard',
     name: 'DashboardVue',
-    component: () => import(/* webpackChunkName: "main" */'../views/DashboardVue.vue')
+    component: () => import(/* webpackChunkName: "main" */'../views/main/DashboardVue.vue')
+  },
+  {
+    path: '/ParentView',
+    name: 'ParentView',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/ParentView.vue')
+  },
+  {
+    path: '/ComposablesView',
+    name: 'ComposablesView',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/ComposablesView.vue')
+  },
+  {
+    path: '/MyMixin1',
+    name: 'MyMixin1',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/MyMixinView.vue')
+  },
+  {
+    path: '/SusView',
+    name: 'SusView',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/SuspenseView.vue')
+  },
+  {
+    path: '/tele',
+    name: 'tele',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/teleportView.vue')
+  },
+  {
+    path: '/vuethreeView',
+    name: 'vuethreeView',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/vuethreeView.vue')
+  },
+  {
+    path: '/vuefourView',
+    name: 'vuefourView',
+    component: () => import(/* webpackChunkName: "main" */'../views/main/vuefourView.vue')
   },
   {
     path: '/parentinjectView',

@@ -25,7 +25,7 @@ export default {
               () => {
                 resolve(
                   {
-                    template: import('@/views/DashboardVue.vue')
+                    template: import('@/views/main/DashboardVue.vue')
                   }
                 )
               }, 4000

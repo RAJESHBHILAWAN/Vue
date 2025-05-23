@@ -79,9 +79,16 @@ export default {
       <span @click="toggleSidebar" v-else>Vue Sidebar</span>
     </h1>
     <h4 @click="maintoggle">Main</h4>
-    <div v-show="togglemain">
+    <div v-show="togglemain" style="overflow-x: auto;">
       <SideBarLink to="/" icon="fas fa-home">Home</SideBarLink>
       <SideBarLink to="/dashboard" icon="fas fa-columns">Dashboard</SideBarLink>
+      <SideBarLink to="/ParentView" icon="fas fa-columns">PView</SideBarLink>
+      <SideBarLink to="/ComposablesView" icon="fas fa-columns">CompoView</SideBarLink>
+      <SideBarLink to="/MyMixin1" icon="fas fa-columns">MyMixin1</SideBarLink>
+      <SideBarLink to="/SusView" icon="fas fa-columns">SusView</SideBarLink>
+      <SideBarLink to="/tele" icon="fas fa-columns">tele</SideBarLink>
+      <SideBarLink to="/vuethreeView" icon="fas fa-columns">3View</SideBarLink>
+      <SideBarLink to="/vuefourView" icon="fas fa-columns">4View</SideBarLink>
     </div>
     <h4 @click="bftoggle">Basic Functions</h4>
     <div v-show="togglebf" style="overflow-x: auto;">

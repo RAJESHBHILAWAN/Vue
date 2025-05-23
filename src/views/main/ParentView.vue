@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import ChildView from '@/views/ChildView.vue'
+import ChildView from '@/views/main/ChildView.vue'
 
 export default {
   components: {

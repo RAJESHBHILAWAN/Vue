@@ -1,4 +1,0 @@
-
-<template>
-   Raj
-   </template>

@@ -14,7 +14,7 @@
 import { defineAsyncComponent } from 'vue'
 
 const AsyncComponent = defineAsyncComponent(() =>
-  import('@/views/DashboardVue.vue')
+  import('@/views/main/DashboardVue.vue')
 )
 
 export default {
