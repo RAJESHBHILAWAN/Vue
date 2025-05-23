@@ -144,6 +144,8 @@ export default {
       <SideBarLink to="/AxiosWithSwitchMap" icon="fas fa-columns">AxiosSwitch</SideBarLink>
       <SideBarLink to="/FuncComp" icon="fas fa-columns">FuncComp</SideBarLink>
       <SideBarLink to="/debounce" icon="fas fa-columns">Debounce</SideBarLink>
+      <SideBarLink to="/axiosWithrxjs" icon="fas fa-columns">axiosWithrxjs</SideBarLink>
+
     </div>
     <!---------------------------------------->
 

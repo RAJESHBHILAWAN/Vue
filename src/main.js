@@ -40,5 +40,16 @@ app.directive('color', {
     el.style.color = binding.value
   }
 })
+app.directive('highlight', {
+  mounted (el, binding) {
+    el.style.color = binding.value
+  },
+  bind (el, binding) {
+    el.style.color = binding.value
+  },
+  updated (el, binding) {
+    el.style.color = binding.value
+  }
+})
 // app.use(VueMask)
 app.mount('#app')

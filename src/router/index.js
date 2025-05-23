@@ -257,6 +257,11 @@ const routes = [
     path: '/debounce',
     name: 'debounce',
     component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/debounceView.vue')
+  },
+  {
+    path: '/axiosWithrxjs',
+    name: 'axiosWithrxjs',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/axiosWithrxjsView.vue')
   }
 
 ]

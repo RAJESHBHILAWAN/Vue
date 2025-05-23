@@ -6,6 +6,8 @@
 <br>
 Response: {{ myresponse }}
 <br>
+Message  {{ myresponsemsg}}
+<br>
 {{ TPwd }}
   </div>
 </template>
@@ -24,6 +26,8 @@ export default {
     const TPwd = ref(Myconstants.TPwd)
     const ipaddress = ref('172.124.11.121')
     const myresponse = ref('')
+    const myresponsemsg = ref('')
+
     const headers = {
       Authorization: Authpwd.value,
       'Access-Control-Allow-Origin': '*',
@@ -48,7 +52,8 @@ export default {
       })
         .then((response) => {
           myresponse.value = response.data
-          console.log('User created successfully:', response.data)
+          console.log('Response successfully recieved:', response.data)
+          myresponsemsg.value = 'Response successfully recieved: ' + response.data
         })
         .catch((error) => {
           console.log(error.response.data)
