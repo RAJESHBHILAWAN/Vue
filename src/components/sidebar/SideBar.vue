@@ -113,6 +113,7 @@ export default {
       <SideBarLink to="/cParentView" icon="fas fa-columns">CParent</SideBarLink>
       <SideBarLink to="/P2View" icon="fas fa-columns">P2View</SideBarLink>
       <SideBarLink to="/ErrBoundary" icon="fas fa-columns">ErrBound</SideBarLink>
+      <SideBarLink to="/refView" icon="fas fa-columns">refView</SideBarLink>
 
     </div>
     <h4 @click="pctoggle">ParentChild</h4>

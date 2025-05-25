@@ -151,6 +151,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "test" */'../views/test/ErrBoundaries/MainCompoFunctionView.vue')
   },
   {
+    path: '/refView',
+    name: 'refView',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/refElements/refView.vue')
+  },
+  {
     path: '/cKeyEvents',
     name: 'cKeyEvents',
     component: () => import(/* webpackChunkName: "PCrelations" */'../views/PCrelations/KeyEventsView.vue')
