@@ -13,7 +13,9 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "main" */ '../views/main/AboutView.vue')
+    component () {
+      return import(/* webpackChunkName: "main" */ '../views/main/AboutView.vue')
+    }
   },
   {
     path: '/dashboard',
@@ -23,7 +25,7 @@ const routes = [
   {
     path: '/ParentView',
     name: 'ParentView',
-    component: () => import(/* webpackChunkName: "main" */'../views/main/ParentView.vue')
+    component: () => import(/* webpackChunkName: "main" */'../views/main/slots/ParentView.vue')
   },
   {
     path: '/ComposablesView',
@@ -136,6 +138,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "test" */'../views/test/tParentView.vue')
   },
   {
+    path: '/eventModifier',
+    name: 'eventModifier',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/EventModifier/eventModifier.vue')
+  },
+  {
     path: '/cParentView',
     name: 'cParentView',
     component: () => import(/* webpackChunkName: "test" */'../views/test/cParentView.vue')
@@ -148,12 +155,17 @@ const routes = [
   {
     path: '/ErrBoundary',
     name: 'ErrBoundary',
-    component: () => import(/* webpackChunkName: "test" */'../views/test/ErrBoundaries/MainCompoFunctionView.vue')
+    component: () => import(/* webpackChunkName: "test" */'../views/test/ErrorHandling/ErrBoundaries/MainCompoFunctionView.vue')
   },
   {
     path: '/refView',
     name: 'refView',
     component: () => import(/* webpackChunkName: "test" */'../views/test/refElements/refView.vue')
+  },
+  {
+    path: '/ErrForBoth',
+    name: 'ErrForBoth',
+    component: () => import(/* webpackChunkName: "test" */'../views/test/ErrorHandling/ErrorforBoth/ErrParentComponent.vue')
   },
   {
     path: '/cKeyEvents',
@@ -284,6 +296,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/carpartsApi.vue')
   },
   {
+    path: '/intercept',
+    name: 'intercept',
+    component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/carpartsApiinterceptor.vue')
+  },
+  {
     path: '/AxiosWithSwitchMap',
     name: 'AxiosWithSwitchMap',
     component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/AxiosWithSwitchMap.vue')
@@ -302,6 +319,81 @@ const routes = [
     path: '/axiosWithrxjs',
     name: 'axiosWithrxjs',
     component: () => import(/* webpackChunkName: "Advanced" */'../views/Advanced/axiosWithrxjsView.vue')
+  },
+  {
+    path: '/sCompoA',
+    name: 'sCompoA',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/AsyncComponents/CompoAsyncA.vue')
+  },
+  {
+    path: '/HOCMain',
+    name: 'HOCMain',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/HOC/Example1/HOCMain.vue')
+  },
+  {
+    path: '/HOC1Main',
+    name: 'HOC1Main',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/HOC/Example2/HOC1Main.vue')
+  },
+  {
+    path: '/HOC3Example',
+    name: 'HOC3Example',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/HOC/Example3/HOC3Example.vue')
+  },
+  {
+    path: '/infinitescroll',
+    name: 'infinitescroll',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/infiniteScrolling.vue')
+  },
+  {
+    path: '/nxttick',
+    name: 'nxttick',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/nextTickView.vue')
+  },
+  {
+    path: '/mainf',
+    name: 'mainf',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/FunctionalElements/MainComponentForF.vue')
+  },
+  {
+    path: '/trans',
+    name: 'trans',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/transitionView.vue')
+  },
+  {
+    path: '/reerror',
+    name: 'reerror',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/rerenderView.vue')
+  },
+  {
+    path: '/yup',
+    name: 'yup',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/yupView.vue')
+  },
+  {
+    path: '/focusLock',
+    name: 'focusLock',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/FocusLockView.vue')
+  },
+  {
+    path: '/lazyview',
+    name: 'lazyview',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/vlazyView.vue')
+  },
+  {
+    path: '/socket',
+    name: 'socket',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/superadv/websocketView.vue')
+  },
+  {
+    path: '/rxJSMyView',
+    name: 'rxJSMyView',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/Advanced/rXjs/rxJSMyView.vue')
+  },
+  {
+    path: '/rxjsMyView1',
+    name: 'rxjsMyView1',
+    component: () => import(/* webpackChunkName: "SAdvanced" */'../views/Advanced/rXjs/rxjsMyView1.vue')
   }
 
 ]

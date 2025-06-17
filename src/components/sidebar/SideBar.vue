@@ -12,6 +12,7 @@ export default {
     const togglepc = ref(false)
     const togglev3v4 = ref(false)
     const toggleadv = ref(false)
+    const togglesadv = ref(false)
 
     const bftoggle = () => {
       inivalues()
@@ -37,6 +38,10 @@ export default {
       inivalues()
       toggleadv.value = !toggleadv.value
     }
+    const sadvtoggle = () => {
+      inivalues()
+      togglesadv.value = !togglesadv.value
+    }
     const inivalues = () => {
       togglebf.value = false
       togglemain.value = false
@@ -44,6 +49,7 @@ export default {
       togglepc.value = false
       togglev3v4.value = false
       toggleadv.value = false
+      togglesadv.value = false
     }
     return {
       inivalues,
@@ -61,7 +67,9 @@ export default {
       v3v4toggle,
       togglev3v4,
       advtoggle,
-      toggleadv
+      toggleadv,
+      sadvtoggle,
+      togglesadv
     }
   }
 }
@@ -71,16 +79,17 @@ export default {
 
   <div class="sidebar" :style="{ width: sideBarWidth }">
 
-    <h1>
+    <p>
       <span @click="toggleSidebar" v-if="collapsed">
         <div>V</div>
         <div>S</div>
       </span>
       <span @click="toggleSidebar" v-else>Vue Sidebar</span>
-    </h1>
-    <h4 @click="maintoggle">Main</h4>
+    </p>
+    <p @click="maintoggle" class="headmenu">Main</p>
     <div v-show="togglemain" style="overflow-x: auto;">
       <SideBarLink to="/" icon="fas fa-home">Home</SideBarLink>
+      <SideBarLink to="/about" icon="fas fa-home">About</SideBarLink>
       <SideBarLink to="/dashboard" icon="fas fa-columns">Dashboard</SideBarLink>
       <SideBarLink to="/ParentView" icon="fas fa-columns">PView</SideBarLink>
       <SideBarLink to="/ComposablesView" icon="fas fa-columns">CompoView</SideBarLink>
@@ -90,7 +99,7 @@ export default {
       <SideBarLink to="/vuethreeView" icon="fas fa-columns">3View</SideBarLink>
       <SideBarLink to="/vuefourView" icon="fas fa-columns">4View</SideBarLink>
     </div>
-    <h4 @click="bftoggle">Basic Functions</h4>
+    <p @click="bftoggle" class="headmenu">Basic Functions</p>
     <div v-show="togglebf" style="overflow-x: auto;">
       <SideBarLink to="/parentinjectView" icon="fas fa-columns">Inject</SideBarLink>
       <SideBarLink to="/suspenseView" icon="fas fa-columns">SusAsync</SideBarLink>
@@ -107,16 +116,18 @@ export default {
       <SideBarLink to="/ErrHandle" icon="fas fa-columns">ErrHandle</SideBarLink>
       <SideBarLink to="/loopView" icon="fas fa-columns">Loop</SideBarLink>
     </div>
-    <h4 @click="testtoggle">Test</h4>
+    <p @click="testtoggle" class="headmenu">Test</p>
     <div v-show="toggletest" style="overflow-x: auto;">
       <SideBarLink to="/tParentView" icon="fas fa-columns">TParent</SideBarLink>
       <SideBarLink to="/cParentView" icon="fas fa-columns">CParent</SideBarLink>
       <SideBarLink to="/P2View" icon="fas fa-columns">P2View</SideBarLink>
       <SideBarLink to="/ErrBoundary" icon="fas fa-columns">ErrBound</SideBarLink>
       <SideBarLink to="/refView" icon="fas fa-columns">refView</SideBarLink>
+      <SideBarLink to="/ErrForBoth" icon="fas fa-columns">ErrForBoth</SideBarLink>
+      <SideBarLink to="/eventModifier" icon="fas fa-columns">eventMod</SideBarLink>
 
     </div>
-    <h4 @click="pctoggle">ParentChild</h4>
+    <p @click="pctoggle" class="headmenu">ParentChild</p>
     <div v-show="togglepc" style="overflow-x: auto;">
       <SideBarLink to="/cKeyEvents" icon="fas fa-columns">KeyEvents</SideBarLink>
       <SideBarLink to="/WatchEvent" icon="fas fa-columns">WatchEvent</SideBarLink>
@@ -130,7 +141,7 @@ export default {
       <SideBarLink to="/SyncParentComponent" icon="fas fa-columns">SyncPComp</SideBarLink>
       <SideBarLink to="/Sync1View" icon="fas fa-columns">Sync1View</SideBarLink>
     </div>
-    <h4 @click="v3v4toggle">V3V4</h4>
+    <p @click="v3v4toggle" class="headmenu">V3V4</p>
     <div v-show="togglev3v4" style="overflow-x: auto;">
       <SideBarLink to="/SlotView" icon="fas fa-columns">SlotView</SideBarLink>
       <SideBarLink to="/Compos" icon="fas fa-columns">Composables</SideBarLink>
@@ -143,16 +154,37 @@ export default {
       <SideBarLink to="/mydirectiveView" icon="fas fa-columns">Directive</SideBarLink>
 
     </div>
-    <h4 @click="advtoggle">Advanced</h4>
+    <p @click="advtoggle" class="headmenu">Adv</p>
     <div v-show="toggleadv" style="overflow-x: auto;">
       <SideBarLink to="/HTTPRequestsView" icon="fas fa-columns">HTTPReqView</SideBarLink>
       <SideBarLink to="/messageSubjectView" icon="fas fa-columns">msgSubView</SideBarLink>
       <SideBarLink to="/compositionView" icon="fas fa-columns">compo</SideBarLink>
       <SideBarLink to="/carpartsApi" icon="fas fa-columns">carparts</SideBarLink>
+      <SideBarLink to="/intercept" icon="fas fa-columns">intercept</SideBarLink>
+
       <SideBarLink to="/AxiosWithSwitchMap" icon="fas fa-columns">AxiosSwitch</SideBarLink>
       <SideBarLink to="/FuncComp" icon="fas fa-columns">FuncComp</SideBarLink>
       <SideBarLink to="/debounce" icon="fas fa-columns">Debounce</SideBarLink>
       <SideBarLink to="/axiosWithrxjs" icon="fas fa-columns">axiosWithrxjs</SideBarLink>
+      <SideBarLink to="/rxjsMyView" icon="fas fa-columns">rxjsMyView</SideBarLink>
+      <SideBarLink to="/rxjsMyView1" icon="fas fa-columns">rxjsMyView1</SideBarLink>
+
+    </div>
+    <p @click="sadvtoggle" class="headmenu">VAdv</p>
+    <div v-show="togglesadv" style="overflow-x: auto;">
+      <SideBarLink to="/sCompoA" icon="fas fa-columns">sCompoA</SideBarLink>
+      <SideBarLink to="/HOCMain" icon="fas fa-columns">HOCMain</SideBarLink>
+      <SideBarLink to="/HOC1Main" icon="fas fa-columns">HOC1Main</SideBarLink>
+      <SideBarLink to="/HOC3Example" icon="fas fa-columns">HOC3Example</SideBarLink>
+      <SideBarLink to="/infinitescroll" icon="fas fa-columns">infinitescroll</SideBarLink>
+      <SideBarLink to="/nxttick" icon="fas fa-columns">nxttick</SideBarLink>
+      <SideBarLink to="/mainf" icon="fas fa-columns">mainf</SideBarLink>
+      <SideBarLink to="/reerror" icon="fas fa-columns">reerror</SideBarLink>
+      <SideBarLink to="/trans" icon="fas fa-columns">trans</SideBarLink>
+      <SideBarLink to="/yup" icon="fas fa-columns">yup</SideBarLink>
+      <SideBarLink to="/focusLock" icon="fas fa-columns">focusLock</SideBarLink>
+      <SideBarLink to="/lazyview" icon="fas fa-columns">lazyview</SideBarLink>
+      <SideBarLink to="/socket" icon="fas fa-columns">socket</SideBarLink>
 
     </div>
     <!---------------------------------------->
@@ -164,6 +196,12 @@ export default {
 </template>
 
 <style>
+.headmenu {
+  font-weight: 900;
+  color: cornflowerblue;
+  text-align: justify;
+}
+
 :root {
   --sidebar-bg-color: #2f3c85;
   --sidebar-item-hover: #6c38a1;

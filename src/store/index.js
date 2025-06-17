@@ -20,12 +20,12 @@ export default createStore({
       setTimeout(() => {
         commit('increment')
       }, 200)
-    },
-    decrementAsync ({ commit }) {
-      setTimeout(() => {
-        commit('decrement')
-      }, 200)
     }
+  },
+  decrementAsync ({ commit }) {
+    setTimeout(() => {
+      commit('decrement')
+    }, 200)
   },
   modules: {
   }

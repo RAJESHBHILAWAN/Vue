@@ -1,6 +1,6 @@
 // Define a mixin object
 export default {
-  data () {
+  data: () => {
     return {
       message: 'Hello from mixin!'
     }

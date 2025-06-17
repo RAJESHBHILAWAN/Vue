@@ -1,7 +1,8 @@
 <template>
   <Suspense>
     <template #default>
-      <AsyncComponent />
+      <component :is="AsyncComponent" />
+
     </template>
     <template #fallback>
       <div>Loading...</div>
@@ -9,7 +10,7 @@
   </Suspense>
 </template>
 
-<script>
+<script setup>
 
 import { defineAsyncComponent } from 'vue'
 
@@ -17,9 +18,9 @@ const AsyncComponent = defineAsyncComponent(() =>
   import('@/views/main/DashboardVue.vue')
 )
 
-export default {
+/* export default {
   components: {
     AsyncComponent
   }
-}
+} */
 </script>
